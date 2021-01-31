@@ -1,0 +1,19 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/tests/**/*"],
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "lib": ["ES2019", "ES2020.Promise", "ES2020.BigInt", "ES2020.String"],
+    "allowJs": true,
+    "outDir": "build",
+    "rootDir": "src",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
