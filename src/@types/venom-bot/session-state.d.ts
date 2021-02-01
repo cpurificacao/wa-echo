@@ -1,0 +1,16 @@
+export type SessionState =
+  | "CONFLICT"
+  | "CONNECTED"
+  | "DEPRECATED_VERSION"
+  | "OPENING"
+  | "PAIRING"
+  | "PROXYBLOCK"
+  | "SMB_TOS_BLOCK"
+  | "TIMEOUT"
+  | "TOS_BLOCK"
+  | "UNLAUNCHED"
+  | "UNPAIRED"
+  | "UNPAIRED_IDLE"
+  | "DISCONNECTED"
+  | "RESUMING"
+  | "SYNCING";
