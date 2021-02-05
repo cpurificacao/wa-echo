@@ -1,9 +1,7 @@
 import { create, Message, Whatsapp } from "venom-bot";
-import { SessionState } from "../@types/venom-bot/enums/session-state";
-import { SessionState } from "../@types/venom-bot/session-state";
-import { SessionStatus } from "../@types/venom-bot/session-status";
+import { SESSION_STATE } from "../constants/session";
 import EchoInterface from "../models/echo";
-import Session from "../models/session";
+import Session, { SessionState, SessionStatus } from "../models/session";
 
 export default class Echo implements EchoInterface {
   private _session: Session;
@@ -13,7 +11,7 @@ export default class Echo implements EchoInterface {
   }
 
   get connected(): boolean {
-    return this._session.state === SessionState.CONNECTED;
+    return this._session.state === SESSION_STATE.CONNECTED;
   }
 
   constructor(sessionId: string) {
