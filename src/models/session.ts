@@ -1,14 +1,46 @@
-import { SessionState } from "../@types/venom-bot/session-state";
-import { SessionStatus } from "../@types/venom-bot/session-status";
-import { SessionToken } from "../@types/venom-bot/session-token";
+import { Whatsapp } from "venom-bot";
+
+export type SessionState =
+  | "CONFLICT"
+  | "CONNECTED"
+  | "DEPRECATED_VERSION"
+  | "OPENING"
+  | "PAIRING"
+  | "PROXYBLOCK"
+  | "SMB_TOS_BLOCK"
+  | "TIMEOUT"
+  | "TOS_BLOCK"
+  | "UNLAUNCHED"
+  | "UNPAIRED"
+  | "UNPAIRED_IDLE"
+  | "DISCONNECTED"
+  | "RESUMING"
+  | "SYNCING";
+
+export type SessionStatus =
+  | "isLogged"
+  | "notLogged"
+  | "browserClose"
+  | "qrReadSuccess"
+  | "qrReadFail"
+  | "autocloseCalled"
+  | "desconnectedMobile"
+  | "deleteToken";
+
+export interface SessionToken {
+  WABrowserId: string;
+  WAToken1: string;
+  WAToken2: string;
+  WASecretBundle: string;
+}
 
 export default class Session {
   private _id!: string;
-  private _echo!: any;
   private _token!: SessionToken;
   private _state!: SessionState;
   private _status!: SessionStatus;
   private _qrCode!: string;
+  private _client!: Whatsapp;
 
   constructor(id: string, state: SessionState, status: SessionStatus) {
     this._id = id;
@@ -21,13 +53,6 @@ export default class Session {
   }
   set id(id: string) {
     this._id = id;
-  }
-
-  get echo(): any {
-    return this._echo;
-  }
-  set echo(echo: any) {
-    this._echo = echo;
   }
 
   get token(): SessionToken {
@@ -56,5 +81,12 @@ export default class Session {
   }
   set qrCode(qrCode: string) {
     this._qrCode = qrCode;
+  }
+
+  get client(): Whatsapp {
+    return this._client;
+  }
+  set client(client: Whatsapp) {
+    this._client = client;
   }
 }
