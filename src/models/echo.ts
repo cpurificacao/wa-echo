@@ -5,5 +5,5 @@ export default interface EchoInterface {
   connected: boolean;
   activate(): Promise<string>;
   deactivate(): Promise<boolean>;
-  send(): Promise<void>;
+  send(to: string, data: string): Promise<void>;
 }
