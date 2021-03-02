@@ -1,3 +1,3 @@
-# wa-echo-bot
+# wa-echo
 
-Whatsapp BOT for automation and service integration
+Whatsapp ECHO for automation and service integration.
