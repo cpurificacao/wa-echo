@@ -1,8 +1,8 @@
 {
-  "name": "wa-echo-bot",
+  "name": "wa-echo",
   "version": "1.0.0",
   "main": "src/main.ts",
-  "repository": "https://github.com/cpurificacao/wa-echo-bot.git",
+  "repository": "https://github.com/cpurificacao/wa-echo.git",
   "author": "cpurificacao <carlos_dbdesktop@outlook.com>",
   "license": "MIT",
   "engines": {
